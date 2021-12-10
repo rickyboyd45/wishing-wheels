@@ -1,6 +1,6 @@
 # Wishing Wheels
 
-Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model and year. Our community is interested in learning about the dream vehicles of others and what made said vehicle your dream car of choice. All we need you to do is sign up, provide the details of said vehicle, a picture and a brief description as to why you fell in love with this vehicle…Wishing Wheels is a play on wishing well, because we ultimately hope you get your wish on wheels.
+Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model and year. Our community is interested in learning about the dream vehicles of others and what made that vehicle your dream car of choice. All we need you to do is sign up, provide the details of said vehicle, a picture and a brief description as to why you fell in love with this vehicle…Wishing Wheels is a play on wishing well, because we ultimately hope you get your wish on wheels.
 
 #### [Wireframes](https://www.figma.com/file/oP7kIxXNlYHs8jFdCoppnU/Wishing-Wheels?node-id=0%3A1)
 
@@ -10,15 +10,21 @@ Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model
 
 #### [Color Palette](https://coolors.co/ceb992-73937e-585563-5b2e48-471323)
 
+#### [ERD](https://drive.google.com/file/d/120-SVePuaCrqTo8xzdNFP_ZsoJ2n0kkk/view?usp=sharing)
+
 #### [Deployed Site]()
 
 ## Wireframes
 
-![image](https://i.imgur.com/DoetdHT.jpg)
+![image](https://i.imgur.com/RXJe4xe.jpg)
 
 ## Component Hierarchy
 
-![image](https://i.imgur.com/eVpFBjn.png)
+![image](https://i.imgur.com/DDBdcRj.jpg)
+
+## ERD
+
+![image]()
 
 ## MVP
 #### Planning 
