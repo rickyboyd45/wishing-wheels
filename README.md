@@ -66,6 +66,9 @@ Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model
 * Implement a carousel to cycle through cards
 
 ## Component Architecture
+
+```
+
 src
 |__assets/
     |__fonts
@@ -110,6 +113,8 @@ src
 |__App.js
 |__index.css
 |__index.js
+
+```
 
 
 ## Time Estimates
