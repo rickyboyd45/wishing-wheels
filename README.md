@@ -6,8 +6,6 @@ Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model
 
 #### [Component Hierarchy](https://whimsical.com/8ztSTDjWxUFti5bXD6qskE)
 
-#### [Component Architecture]()
-
 #### [Color Palette](https://coolors.co/ceb992-73937e-585563-5b2e48-471323)
 
 #### [ERD](https://drive.google.com/file/d/120-SVePuaCrqTo8xzdNFP_ZsoJ2n0kkk/view?usp=sharing)
@@ -66,6 +64,53 @@ Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model
 ## Post-MVP
 * Add video link to car cards
 * Implement a carousel to cycle through cards
+
+## Component Architecture
+src
+|__assets/
+    |__fonts
+    |__images
+|__components/
+  |__
+    |__
+    |__
+|__containers/
+    |__nav/
+|__layouts/
+  |__layout
+    |__layout.css
+    |__layout.jsx
+|__screens/
+    |__home/splash
+      |__splash.css
+      |__splash.jsx
+    |__carCreate
+      |__carCreate.css
+      |__carCreate.jsx
+    |__carDetails
+      |__carDetails.css
+      |__carDetails.jsx
+    |__carEdit
+      |__carEdit.css
+      |__carEdit.jsx
+    |__login
+      |__login.css
+      |__login.jsx
+    |__register
+      |__register.css
+      |__register.jsx
+    |__about
+      |__about.css
+      |__about.jsx
+|__services/
+    |__apiConfig.js
+    |__auth.js
+    |__posts.js
+|__App.css
+|__App.js
+|__index.css
+|__index.js
+
 
 ## Time Estimates
 
