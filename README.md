@@ -22,7 +22,7 @@ Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model
 
 ## ERD
 
-![image]()
+![image](https://i.imgur.com/pFCl2gw.png)
 
 ## MVP
 #### Planning 
@@ -68,15 +68,11 @@ Welcome to Wishing Wheels! We want to know your set of dream wheels, make, model
 ## Component Architecture
 
 ```
-
 src
 |__assets/
     |__fonts
     |__images
 |__components/
-  |__
-    |__
-    |__
 |__containers/
     |__nav/
 |__layouts/
@@ -113,7 +109,6 @@ src
 |__App.js
 |__index.css
 |__index.js
-
 ```
 
 
