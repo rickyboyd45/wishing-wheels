@@ -1,5 +1,7 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :update, :destroy]
+  before_action :set_car, only: :show
+  before_action :authorize_request, only: :create
+  before_action :set_user_car, only: [:update, :destroy]
 
   # GET /cars
   def index
@@ -16,9 +18,9 @@ class CarsController < ApplicationController
   # POST /cars
   def create
     @car = Car.new(car_params)
-
+    @car.user = @current_user
     if @car.save
-      render json: @car, status: :created, location: @car
+      render json: @car, status: :created
     else
       render json: @car.errors, status: :unprocessable_entity
     end
@@ -44,8 +46,12 @@ class CarsController < ApplicationController
       @car = Car.find(params[:id])
     end
 
+    def set_user_car
+      @car = @current_user.cars.find(params[:id])
+    end
+
     # Only allow a list of trusted parameters through.
     def car_params
-      params.require(:car).permit(:user_id, :make, :model, :year, :content, :img_url)
+      params.require(:car).permit(:make, :model, :year, :content, :img_url)
     end
 end

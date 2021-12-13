@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: :show
+  before_action :authorization_request, only: [:update, :destroy]
 
   # GET /users
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users, except: :password_digest
   end
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, except: :password_digest
   end
 
   # POST /users
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
+    if @current_user.update(user_params)
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
+    @current_user.destroy
   end
 
   private
