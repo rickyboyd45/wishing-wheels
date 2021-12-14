@@ -2,7 +2,8 @@ import React from 'react'
 import '../assets/css/NavBar.css'
 import { Link } from 'react-router-dom'
 
-function NavBar() {
+function NavBar(props) {
+  const { currentUser } = props;
 
   return (
     <>
@@ -27,8 +28,13 @@ function NavBar() {
         <Link to="/about" ><p>About</p></Link>
         </li>
 
-        <li>
-        <Link to="/login" ><p>Login</p></Link>
+          <li>
+            {
+              currentUser ? (
+              <p>Log Out</p>
+            ) : (
+              <Link to="/login" ><p>Login</p></Link>
+            )}
         </li>
 
         <li>

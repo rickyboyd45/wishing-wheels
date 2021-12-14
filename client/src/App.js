@@ -1,14 +1,22 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Layout from './components/Layout';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
-import { loginUser, registerUser } from './services/auth';
+import { loginUser, registerUser, verifyUser } from './services/auth';
 import SignUp from './components/SignUpForm';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory()
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    }
+    handleVerify()
+  },[])
 
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData)
@@ -24,7 +32,7 @@ function App() {
   return (
     <div className="App">
 
-      <Layout>
+      <Layout currentUser={currentUser}>
         <Switch>
           <Route path='/'></Route>
         </Switch>
