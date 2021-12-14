@@ -19,16 +19,8 @@ function NavBar(props) {
       
 
       <div className='nav__right'>
-        <ul className='nav__ul'></ul>
+        <ul className='nav__ul'></ul>          
         <li>
-        <Link to="/create" ><p>Create Post</p></Link>
-        </li>
-
-        <li>
-        <Link to="/about" ><p>About</p></Link>
-        </li>
-
-          <li>
             {
               currentUser ? (
                 <div>
@@ -37,6 +29,18 @@ function NavBar(props) {
             ) : (
               <Link to="/login" ><p>Login</p></Link>
             )}
+        </li>
+          <li>
+            {currentUser &&
+        <Link to="/create" ><p>Create Post</p></Link>}
+        </li>
+
+        <li>
+        <Link to="/about" ><p>About</p></Link>
+          </li>
+          
+        <li>
+        <Link to="/wheels" ><p>Wheels</p></Link>
         </li>
 
           <li>
