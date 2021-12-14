@@ -4,9 +4,10 @@ import AboutPage from '../components/AboutPage'
 
 function About() {
   return (
-    <Layout>
-      <AboutPage />
-    </Layout>
+    <div>
+      <Layout/>
+      <AboutPage/>
+    </div>
   )
 }
 

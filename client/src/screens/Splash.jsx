@@ -5,9 +5,6 @@ import SplashContainer from '../components/SplashContainer'
 function Splash() {
   return (
     <div>
-    <Layout>
-      
-    </Layout>
       <SplashContainer />
     </div>
   )

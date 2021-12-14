@@ -5,9 +5,8 @@ import CreateForm from '../components/CreateForm'
 function Create() {
   return (
     <div>
-    <Layout>
+      <Layout/>
       <CreateForm />
-    </Layout>
     </div>
   )
 }

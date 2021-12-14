@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Display() {
+function MainContainer() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Display() {
   )
 }
 
-export default Display
+export default MainContainer

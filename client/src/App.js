@@ -5,6 +5,8 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import SignUp from './components/SignUpForm';
+import MainContainer from './Containers/MainContainer';
+import Splash from './screens/Splash';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -40,26 +42,27 @@ function App() {
 
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
-          <Route path='/'></Route>
-        </Switch>
 
-        <Switch>
+          <Route path='/' exact>
+            <Splash/>
+          </Route>
+          
+          <Route path='/'>
+            <MainContainer />
+          </Route>
+
           <Route path='/wheels'></Route>
-        </Switch>
-        
-        <Switch>
+
           <Route path='/about'></Route>
-        </Switch>
         
-        <Switch>
-          <Route path='/login'><LoginForm handleLogin={handleLogin}/></Route>
-        </Switch>
-
-        <Switch>
-          <Route path='/signup'><SignUp handleRegister={handleRegister} /></Route>
-        </Switch>
-
-        <Switch>
+          <Route path='/login'>
+            <LoginForm handleLogin={handleLogin} />
+          </Route>
+        
+          <Route path='/signup'>
+            <SignUp handleRegister={handleRegister} />
+          </Route>
+        
           <Route path='/create'></Route>
         </Switch>
 

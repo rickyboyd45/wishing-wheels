@@ -4,9 +4,10 @@ import Wheels from '../components/WheelsPage'
 
 function Wheels() {
   return (
-    <Layout>
+    <div>
+      <Layout />
       <Wheels />
-    </Layout>
+    </div>
   )
 }
 

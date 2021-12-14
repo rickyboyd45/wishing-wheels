@@ -6,9 +6,8 @@ import SignUp from '../components/SignUpForm';
 function SignUpScreen() {
   return (
     <div>
-    <Layout>
+      <Layout/>
       <SignUp />
-    </Layout>
     </div>
   )
 }

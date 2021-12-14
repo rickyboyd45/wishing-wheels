@@ -5,9 +5,8 @@ import LoginForm from '../components/LoginForm'
 function signIn() {
   return (
     <div>
-      <Layout>
+        <Layout/>
         <LoginForm />
-      </Layout>
     </div>
   )
 }
