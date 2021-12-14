@@ -1,0 +1,23 @@
+.nav__left {
+  display: flex;
+  margin: -20px 45px;
+}
+.nav__logo__img {
+  margin: 5px 5px;
+}
+
+.nav__logo {
+  display: flex;
+  flex-flow: row nowrap;
+  text-align: left;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  cursor: pointer;
+  margin: 5px 0 0 5px;
+}
+
+.nav__right {
+  display: flex;
+  margin: -40px 0px 0px 850px;
+}

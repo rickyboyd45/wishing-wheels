@@ -40,6 +40,12 @@ class CarsController < ApplicationController
     @car.destroy
   end
 
+  # def add_car
+  #   @car = Car.find(car_params[:car_id])
+  # end
+
+  # render json: @car
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
