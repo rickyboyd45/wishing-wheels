@@ -32,7 +32,7 @@ function NavBar() {
         </li>
 
         <li>
-        <Link to="/sign-up" ><p>Sign Up</p></Link>
+        <Link to="/signup" ><p>Sign Up</p></Link>
         </li>
 
         </div>
