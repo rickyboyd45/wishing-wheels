@@ -44,6 +44,10 @@ function App() {
         </Switch>
 
         <Switch>
+          <Route path='/wheels'></Route>
+        </Switch>
+        
+        <Switch>
           <Route path='/about'></Route>
         </Switch>
         

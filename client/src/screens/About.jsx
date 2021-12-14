@@ -1,10 +1,12 @@
 import React from 'react'
+import Layout from '../components/Layout'
+import AboutPage from '../components/AboutPage'
 
 function About() {
   return (
-    <div>
-      
-    </div>
+    <Layout>
+      <AboutPage />
+    </Layout>
   )
 }
 

@@ -1,15 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import CreateForm from '../components/CreateForm'
+import SignUp from '../components/SignUpForm';
 
-function Create() {
+
+function SignUpScreen() {
   return (
     <div>
     <Layout>
-      <CreateForm />
+      <SignUp />
     </Layout>
     </div>
   )
 }
 
-export default Create
+export default SignUpScreen;
