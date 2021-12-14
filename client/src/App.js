@@ -1,5 +1,5 @@
 import './App.css';
-import Splash from './screens/Splash';
+import Layout from './components/Layout';
 
 
 
@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="App">
 
-      <Splash/>
+      <Layout>
+
+
+      </Layout>
       
     </div>
   );

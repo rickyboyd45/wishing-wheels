@@ -2,13 +2,14 @@ import React from 'react'
 import NavBar from './NavBar'
 
 
-function Layout() {
+function Layout(props) {
   return (
-    <div>
-
+    <>
+    <header>
       <NavBar />
-      
-    </div>
+    </header>
+    {props.children}
+    </>
   )
 }
 

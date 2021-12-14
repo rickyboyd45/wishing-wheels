@@ -1,9 +1,22 @@
-.nav__left {
+.navcontainer {
+  position: sticky;
   display: flex;
-  margin: -20px 45px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #CEB992;
+  background-attachment: fixed;
+  padding: 25px 0px;
+  width: 100%;
+  height: 50px;
+  z-index: 999;
+  top: 0;
+  font-size: 25px;
 }
+
 .nav__logo__img {
   margin: 5px 5px;
+  justify-content: center;
+  align-items: center
 }
 
 .nav__logo {
@@ -14,10 +27,84 @@
   color: rgb(0, 0, 0);
   align-items: center;
   cursor: pointer;
-  margin: 5px 0 0 5px;
+  justify-content: left;
+  margin: 0 -10px;
+  padding: 0 5px;
 }
 
 .nav__right {
   display: flex;
   margin: -40px 0px 0px 850px;
+  text-decoration: none;
+}
+
+.nav__ul {
+  margin: 0 -360px;
+  padding: 0px 130px 0 230px;
+}
+
+.nav__left > h4 {
+  border: 2px solid hsl(296, 44%, 6%);
+}
+
+.nav__ul > li > a:hover,
+.nav__ul > li > p:hover {
+  text-decoration: underline;
+}
+
+.nav__ul > * {
+  margin-right: 20px;
+  color: white;
+}
+
+@media only screen and (max-width:955px) {
+  .navcontainer {
+    width: 115%
+  }
+
+  .nav__ul {
+  margin: -20px -315px;
+  padding: 0px 155px;
+  list-style-type: none;
+  }
+}
+
+@media only screen and (max-width:890px) {
+  .nav__ul {
+    margin: 0px -345px;
+    padding: 0px 165px;
+    list-style-type: none;
+    }
+
+  .nav__left {
+    display: none;
+  }
+
+  .navcontainer {
+    width: 121%
+  }
+}
+
+@media only screen and (max-width:750px) {
+  .navcontainer {
+    width: 250%
+  }
+
+  .nav__ul {
+    margin: 0px -310px;
+    padding: 0px 125px;
+    list-style-type: none;
+  }
+}
+
+@media only screen and (max-width:580px) {
+  .nav__ul {
+    margin: 0px -355px;
+    padding: 0px 130px;
+  }
+
+  .navcontainer {
+    width: 250%;
+    font-size: 33px;
+  }
 }
