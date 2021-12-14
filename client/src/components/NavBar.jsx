@@ -3,7 +3,7 @@ import '../assets/css/NavBar.css'
 import { Link } from 'react-router-dom'
 
 function NavBar(props) {
-  const { currentUser } = props;
+  const { currentUser, handleLogout } = props;
 
   return (
     <>
@@ -31,14 +31,23 @@ function NavBar(props) {
           <li>
             {
               currentUser ? (
-              <p>Log Out</p>
+                <div>
+                <p>Welcome, {currentUser.username}</p>
+                </div>
             ) : (
               <Link to="/login" ><p>Login</p></Link>
             )}
         </li>
 
-        <li>
-        <Link to="/signup" ><p>Sign Up</p></Link>
+          <li>
+            {
+              currentUser ? (
+                <div>
+                  <button className='logout__btn' onClick={handleLogout}>Log Out</button>
+                </div>
+              ) : (
+                <Link to="/signup" ><p>Sign Up</p></Link>
+              )}
         </li>
 
         </div>

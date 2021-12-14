@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 import Layout from './components/Layout';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
-import { loginUser, registerUser, verifyUser } from './services/auth';
+import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import SignUp from './components/SignUpForm';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -16,23 +16,29 @@ function App() {
       setCurrentUser(userData);
     }
     handleVerify()
-  },[])
+  }, []);
 
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData)
     setCurrentUser(userData);
     history.push('/')
-  }
+  };
 
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData)
     setCurrentUser(userData);
     history.push('/')
-  }
+  };
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('authToken');
+    removeToken();
+  };
+    
   return (
     <div className="App">
 
-      <Layout currentUser={currentUser}>
+      <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route path='/'></Route>
         </Switch>
