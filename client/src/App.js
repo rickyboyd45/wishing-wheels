@@ -34,18 +34,16 @@ function App() {
     setCurrentUser(null);
     localStorage.removeItem('authToken');
     removeToken();
+    history.push('/')
   };
     
   return (
     <div className="App">
 
+      
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
+
         <Switch>
-{/* 
-          <Route path='/wheels'></Route>
-          <Route path='/create'></Route>
-          <Route path='/edit'></Route>
-           */}
         
           <Route path='/login'>
             <LoginForm handleLogin={handleLogin} />

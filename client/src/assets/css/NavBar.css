@@ -3,20 +3,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #CEB992;
+  background-color: #e3cca28c;
   background-attachment: fixed;
   padding: 25px 0px;
-  width: 100%;
-  height: 50px;
   z-index: 999;
   top: 0;
-  font-size: 25px;
 }
 
 .nav__logo__img {
   margin: 5px 5px;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .nav__logo {
@@ -59,7 +56,7 @@
 
 @media only screen and (max-width:955px) {
   .navcontainer {
-    width: 115%
+    width: 115%;
   }
 
   .nav__ul {
@@ -67,44 +64,115 @@
   padding: 0px 155px;
   list-style-type: none;
   }
+
+  .nav__left {
+    display: none;
+  }
 }
 
-@media only screen and (max-width:890px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .nav__ul {
+    margin: 0px -355px;
+    padding: 0px 130px;
+  }
+
+  .nav__logo__img {
+    margin: 5px 5px;
+    padding: 10px 10px;
+    height: 150px;
+    width: 150px;
+}
+
+  .navcontainer {
+    width: 380%;
+    font-size: 45px;
+    height: 150px;
+    font-size: 60px;
+  }
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .nav__ul {
+    margin: 0px -355px;
+    padding: 0px 130px;
+  }
+
+  .nav__logo__img {
+    margin: 5px 5px;
+    padding: 10px 10px;
+    height: 170px;
+    width: 170px;
+}
+
+  .navcontainer {
+    width: 260%;
+    font-size: 45px;
+    height: 140px;
+    font-size: 55px;
+  }
+}
+
+@media only screen and (min-device-width: 1025px) {
+  .nav__ul {
+    margin: 0px -355px;
+    padding: 0px 130px;
+  }
+
+  .nav__logo__img {
+    margin: 5px 5px;
+    padding: 10px 10px;
+    height: 160px;
+    width: 160px;
+}
+  .navcontainer {
+    width: 260%;
+    font-size: 45px;
+    height: 125px;
+    font-size: 50px;
+  }
+}
+
+/* @media only screen and (max-width:890px) {
   .nav__ul {
     margin: 0px -345px;
     padding: 0px 165px;
     list-style-type: none;
     }
 
+    .nav__logo__img {
+      margin: 5px 5px;
+  }
+
   .nav__left {
     display: none;
   }
 
   .navcontainer {
-    width: 121%
+    width: 121%;
+    font-size: 45px;
   }
-}
+} */
 
-@media only screen and (max-width:750px) {
+/* @media only screen and (max-width:750px) {
   .navcontainer {
-    width: 250%
+    width: 250%;
+    font-size: 45px;
   }
+
+  .nav__logo__img {
+    margin: 5px 5px;
+}
 
   .nav__ul {
     margin: 0px -310px;
     padding: 0px 125px;
     list-style-type: none;
   }
-}
+} */
 
-@media only screen and (max-width:580px) {
-  .nav__ul {
-    margin: 0px -355px;
-    padding: 0px 130px;
-  }
 
-  .navcontainer {
-    width: 250%;
-    font-size: 33px;
-  }
-}
+
+/* @media only screen and (max-width:580px) {
+
+} */
