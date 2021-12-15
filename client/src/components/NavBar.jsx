@@ -1,6 +1,7 @@
 import React from 'react'
 import '../assets/css/NavBar.css'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 
 function NavBar(props) {
   const { currentUser, handleLogout } = props;
@@ -47,10 +48,12 @@ function NavBar(props) {
             {
               currentUser ? (
                 <div>
-                  <button className='logout__btn' onClick={handleLogout}>Log Out</button>
+                  <Button className='logout__btn' variant="warning" onClick={handleLogout}>Log Out</Button>
                 </div>
               ) : (
-                <Link to="/signup" ><p>Sign Up</p></Link>
+                  <Link to="/signup" >
+                  <Button className='signup__btn' variant="warning">Sign Up</Button>
+                  </Link>
               )}
         </li>
 

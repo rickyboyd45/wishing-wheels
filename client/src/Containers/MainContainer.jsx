@@ -41,17 +41,15 @@ function MainContainer() {
   return (
     <div>
       <Switch>
-        
-        {/* <Route path='/'>
-            <Splash/>
-        </Route> */}
         <Route path='/cars/:id/edit'><EditModal cars={cars} handleCarUpdate={handleCarUpdate}/></Route>
 
         <Route path='/cars/new'><CreateForm handleCarCreate={handleCarCreate}/></Route>
         
         <Route path='/cars'><Wheels cars={cars} handleCarDelete={handleCarDelete} /></Route>
 
-
+        <Route path='/'>
+          <Splash/>
+        </Route>
       </Switch>
     </div>
   )

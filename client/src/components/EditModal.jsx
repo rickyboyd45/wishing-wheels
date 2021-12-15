@@ -20,7 +20,7 @@ function EditModal({ cars, handleCarUpdate }) {
       setFormData({ make, model, year, content, img_url });
     };
   if (cars.legnth) prefillForm();
-  }, [cars]);
+  }, [id, cars]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
