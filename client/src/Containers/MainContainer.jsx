@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useHistory } from 'react-router-dom'
 import CreateForm from '../components/CreateForm'
 import Splash from '../screens/Splash'
 import Wheels from '../screens/Wheels'
-import { getAllCars } from '../services/car'
+import { getAllCars, postCar } from '../services/car'
 
 function MainContainer() {
-  const [cars, setCars] = useState([])
+  const [cars, setCars] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -17,10 +18,16 @@ function MainContainer() {
     fetchCars();
   }, [])
 
+  const handleCarCreate = async (formData) => {
+    const newCar = await postCar(formData);
+    setCars((prevState) => [...prevState, newCar]);
+    history.push('/cars');
+  }
+
   return (
     <div>
       <Switch>
-        <Route path='/cars/new'><CreateForm /></Route>
+        <Route path='/cars/new'><CreateForm handleCarCreate={handleCarCreate}/></Route>
 
         <Route path='/cars'><Wheels cars={cars}/></Route>
 

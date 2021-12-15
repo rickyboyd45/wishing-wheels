@@ -40,7 +40,7 @@ function NavBar(props) {
           </li>
           
         <li>
-        <Link to="/wheels" ><p>Wheels</p></Link>
+        <Link to="/cars" ><p>Wheels</p></Link>
         </li>
 
           <li>

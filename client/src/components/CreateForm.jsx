@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 
-function CreateForm() {
+function CreateForm({ handleCarCreate }) {
   const [formData, setFormData] = useState({
     make: '',
     model: '',
@@ -23,8 +23,11 @@ function CreateForm() {
     <div>
     
       <h3>Create New Post</h3>
-      <form>
-
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        handleCarCreate(formData)
+      }}
+      >
         <label for="year">Year:</label>
         <select
           placeholder="Year"
