@@ -4,7 +4,7 @@ import { Switch, Route, useHistory } from 'react-router-dom'
 import CreateForm from '../components/CreateForm'
 import Splash from '../screens/Splash'
 import Wheels from '../screens/Wheels'
-import { getAllCars, postCar } from '../services/car'
+import { deleteCar, getAllCars, postCar } from '../services/car'
 
 function MainContainer() {
   const [cars, setCars] = useState([]);
@@ -24,12 +24,17 @@ function MainContainer() {
     history.push('/cars');
   }
 
+  const handleCarDelete = async (id) => {
+    await deleteCar(id);
+    setCars(prevState => prevState.filter(car => car.id !== id));
+  }
+
   return (
     <div>
       <Switch>
         <Route path='/cars/new'><CreateForm handleCarCreate={handleCarCreate}/></Route>
 
-        <Route path='/cars'><Wheels cars={cars}/></Route>
+        <Route path='/cars'><Wheels cars={cars} handleCarDelete={handleCarDelete}/></Route>
 
         <Route path='/cars/edit'></Route>
 

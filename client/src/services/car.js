@@ -10,3 +10,6 @@ export const postCar = async (carData) => {
   return resp.data;
 };
 
+export const deleteCar = async (id) => {
+  await api.delete(`/cars/${id}`);
+}
