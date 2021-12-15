@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react'
-import Layout from './components/Layout';
+import Layout from './layouts/Layout';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
