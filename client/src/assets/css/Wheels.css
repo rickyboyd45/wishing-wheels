@@ -1,0 +1,5 @@
+.car__card {
+  border: 3px solid green;
+  display: flex;
+  padding: 40px;
+}

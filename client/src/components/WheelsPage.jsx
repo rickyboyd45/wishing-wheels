@@ -1,41 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Card from 'react-bootstrap/Card'
+import { Card, CardGroup } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.css"
 import Button from 'react-bootstrap/Button';
+import '../assets/css/Wheels.css'
 
 function WheelsPage({ cars, handleCarDelete }) {
   
   return (
-    <div>
+  <div>
       {cars.map((car) => (
 
-          <div>
-            {/* <p><img src={car.img_url} alt={car.make}/></p>
-            <p>{car.year}</p>
-            <p>{car.make}</p>
-            <p>{car.model}</p>
-            <p>{car.content}</p> */}
-
-  <Card style={{ width: '50rem' }}>
+        <div  className='car__card' >
+          <CardGroup class="mx-auto">
+  <Card bg='light' style={{ width: '40rem' }}>
     <Card.Img variant="top" src={car.img_url} />
     <Card.Body>
-      <Card.Title >{car.year} {car.model}</Card.Title>
-                  <Card.Text>{car.make}</Card.Text>
-                  <Card.Text>{car.content }</Card.Text>
+      <Card.Title className=''>{car.year} {car.model}</Card.Title>
+        <Card.Text>{car.make}</Card.Text>
+        <Card.Text>{car.content }</Card.Text>
     </Card.Body>
-    <Card.Footer>
-      <Link to={`/cars/${car.id}/edit`}>
-          <button>Edit</button>
-          </Link>
-          <button onClick={()=>handleCarDelete(car.id)}>Delete</button>
+              <Card.Footer className='btn_3' class="d-flex justify-content-around">
+                
+                <div>
+                  <Link to={`/cars/${car.id}/edit`}>
+    <Button  variant="primary" size="sm" >Edit</Button></Link>
+    <Button variant="secondary" size="sm" onClick={()=>handleCarDelete(car.id)}>Delete</Button>
+                </div>
     </Card.Footer>
   </Card>
-          
-        </div>
+</CardGroup>
+    </div>
       ))}
       
-    </div>
+  </div>
   )
 }
 

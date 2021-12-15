@@ -55,7 +55,9 @@ function NavBar(props) {
                   <Button className='signup__btn' variant="warning">Sign Up</Button>
                   </Link>
               )}
-        </li>
+          </li>
+          
+          
 
         </div>
       </nav>
