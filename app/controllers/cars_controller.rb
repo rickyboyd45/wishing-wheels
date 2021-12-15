@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: :show
-  before_action :authorize_request, only: :create
+  before_action :authorize_request, only: [:create, :update, :destroy ]
   before_action :set_user_car, only: [:update, :destroy]
 
   # GET /cars

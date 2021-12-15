@@ -23,7 +23,8 @@ function CreateForm({ handleCarCreate }) {
     <div>
     
       <h3>Create New Post</h3>
-      <form onSubmit={(e) => {
+      <form
+        onSubmit={(e) => {
         e.preventDefault()
         handleCarCreate(formData)
       }}
@@ -220,8 +221,7 @@ function CreateForm({ handleCarCreate }) {
           onChange={handleChange}
         />
         
-        <input type="submit" value="Submit"/>
-        <input type="reset"/>
+        <button>Submit</button>
 
       </form>
     </div>

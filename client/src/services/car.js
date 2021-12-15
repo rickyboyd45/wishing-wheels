@@ -10,6 +10,11 @@ export const postCar = async (carData) => {
   return resp.data;
 };
 
+export const putCar = async (id, carData) => {
+  const resp = await api.put(`/cars/${id}`, { car: carData })
+  return resp.data;
+}
+
 export const deleteCar = async (id) => {
   await api.delete(`/cars/${id}`);
-}
+};

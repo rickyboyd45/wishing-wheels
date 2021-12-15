@@ -1,15 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-function WheelsPage({cars, handleCarDelete}) {
+function WheelsPage({ cars, handleCarDelete }) {
+  
   return (
     <div>
-      <h3>Cars</h3>
       {cars.map((car) => (
-
-        <div>
+        <div className='car__card'>
+          <div >
+            <p><img src={car.img_url} alt={car.make}/></p>
+          <p>{car.year}</p>
           <p>{car.make}</p>
+          <p>{car.model}</p>
+          <p>{car.content}</p>
+          </div>
+
+          <Link to={`/cars/${car.id}/edit`}>
           <button>Edit</button>
+          </Link>
           <button onClick={()=>handleCarDelete(car.id)}>Delete</button>
         </div>
       ))}
