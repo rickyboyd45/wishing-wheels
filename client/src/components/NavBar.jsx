@@ -32,7 +32,7 @@ function NavBar(props) {
         </li>
           <li>
             {currentUser &&
-        <Link to="/create" ><p>Create Post</p></Link>}
+        <Link to="/cars/new" ><p>Create Post</p></Link>}
         </li>
 
         <li>

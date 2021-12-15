@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import CreateForm from '../components/CreateForm'
 import Splash from '../screens/Splash'
+import Wheels from '../screens/Wheels'
 import { getAllCars } from '../services/car'
 
 function MainContainer() {
@@ -18,11 +20,11 @@ function MainContainer() {
   return (
     <div>
       <Switch>
-        <Route path='/cars'><h1>Cars List</h1></Route>
+        <Route path='/cars/new'><CreateForm /></Route>
 
-        <Route path='/create'></Route>
+        <Route path='/cars'><Wheels cars={cars}/></Route>
 
-        <Route path='/edit'></Route>
+        <Route path='/cars/edit'></Route>
 
         <Route path='/'>
             <Splash/>

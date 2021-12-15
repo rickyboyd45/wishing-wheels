@@ -1,13 +1,11 @@
 import React from 'react'
-import Layout from '../components/Layout'
 import WheelsPage from '../components/WheelsPage'
 
 
-function Wheels() {
+function Wheels({cars}) {
   return (
     <div>
-      <Layout />
-      <WheelsPage />
+      <WheelsPage cars={cars}/>
     </div>
   )
 }
