@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
+import { Form, Button, Container } from 'react-bootstrap'
 
 function LoginForm(props) {
   const [formData, setFormData] = useState({
@@ -20,26 +21,42 @@ function LoginForm(props) {
   };
 
   return (
-    <form onSubmit={(e) => {
+    <div>
+      
+      <Container >
+<Form onSubmit={(e) => {
       e.preventDefault();
       handleLogin(formData);
-    }}>
-      <label>Username:
-        <input type='text'
-          name='username'
-          value={username}
-          onChange={handleChange} />
-      </label>
-      <label>
-        Password:
-        <input type='password'
-          name='password'
-          value={password}
-          onChange={handleChange} />
-      </label>
-      <Link to='/signup'>Sign Up</Link>
-      <button>Submit</button>
-    </form>
+      }}>
+        
+        <Form.Group className="mb-2" controlId="formBasicUser">
+            <Form.Text className="text-muted">Need a Wishing Wheels account? <Link to='/signup'>Sign Up</Link>
+              <br/>
+    </Form.Text>
+    <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="text"
+            name='username'
+            value={username}
+            onChange={handleChange}
+            placeholder="Username" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            name='password'
+            value={password}
+            onChange={handleChange}
+            placeholder="Password" />
+        </Form.Group>
+
+  <Button variant="primary" type="submit">Submit</Button>
+      </Form>
+</Container>
+
+    </div>
   )
 }
 

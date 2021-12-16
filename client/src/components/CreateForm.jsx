@@ -1,5 +1,6 @@
 import React from 'react'
-import {useState} from 'react'
+import { useState } from 'react'
+// import { Form, Button, Container, Dropdown, DropdownButton } from 'react-bootstrap'
 
 function CreateForm({ handleCarCreate }) {
   const [formData, setFormData] = useState({
@@ -188,8 +189,6 @@ function CreateForm({ handleCarCreate }) {
           <option>Volvo</option>
         </select>
           
-
-
         <label>Model:</label>
         <input
           placeholder="Model"
@@ -224,6 +223,88 @@ function CreateForm({ handleCarCreate }) {
         <button>Submit</button>
 
       </form>
+
+      {/* <Container >
+        <Form onSubmit={(e) => {
+        e.preventDefault()
+        handleCarCreate(formData)
+      }}>
+              
+              <Form.Group className="mb-7" controlId="formBasicYear">
+                <Form.Label>Year</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name='year'
+                    value={year}
+                    onChange={handleChange}
+                    placeholder="Year" />
+          </Form.Group>
+          
+              <Form.Group className="mb-8" controlId="formBasicModel">
+                <Form.Label>Model</Form.Label>
+                  <Form.Control
+                    placeholder="Model"
+                    value={model}
+                    name="model"
+                    type="text"
+                    required
+                    onChange={handleChange}
+                  />
+                  </Form.Group>
+                
+              <Form.Group className="mb-9" controlId="formBasicMake">
+                <Form.Label>Make</Form.Label>
+                <Form.Control>
+                  placeholder="Make"
+                  value={make}
+                  name="make"
+                  id="make"
+                  type="text"
+                  required
+                  onChange={handleChange}
+
+            </Form.Control>
+          </Form.Group>
+          
+              <Form.Group className="mb-10" controlId="formBasicModel">
+                <Form.Label>Model</Form.Label>
+                <Form.Control
+          placeholder="Model"
+          value={model}
+          name="model"
+          type="text"
+          required
+          onChange={handleChange}
+        />
+          </Form.Group>
+          
+              <Form.Group className="mb-11" controlId="formBasicImg">
+                <Form.Label>Add Photo Link Here:</Form.Label>
+                <Form.Control
+          placeholder="Add Photo Link Here"
+          value={img_url}
+          name="img_url"
+          type="text"
+          required
+          onChange={handleChange}
+        />
+              </Form.Group>
+
+              <Form.Group className="mb-12" controlId="formBasicContent">
+                <Form.Label>What Made You Love This Vehicle?</Form.Label>
+                  <Form.Control
+                            placeholder="What Made You Love This Vehicle?"
+                            value={content}
+                            rows={8}
+                            name="content"
+                            type="text"
+                            required
+                            onChange={handleChange}
+                          />
+              </Form.Group>
+          <Button variant="primary" type="submit">Submit</Button>
+        </Form>
+        </Container> */}
     </div>
   );
 }
