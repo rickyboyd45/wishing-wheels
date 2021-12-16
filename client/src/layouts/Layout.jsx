@@ -1,5 +1,6 @@
 import React from 'react'
 import Navigate from '../components/NavBar';
+import '../assets/css/Layout.css'
 
 
 function Layout(props) {
@@ -7,10 +8,15 @@ function Layout(props) {
 
   return (
     <>
-    <header>
+    <header className='header'>
         <Navigate currentUser={currentUser} handleLogout={handleLogout}/>
-    </header>
-    {props.children}
+      </header>
+      
+      {props.children}
+
+      <footer className='footer'>
+        <p>&copy; Ricky Boyd 2021</p>
+      </footer>
     </>
   )
 }
