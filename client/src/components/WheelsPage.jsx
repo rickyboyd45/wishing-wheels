@@ -8,12 +8,11 @@ import '../assets/css/Wheels.css'
 function WheelsPage({ cars, handleCarDelete }) {
   
   return (
-  <div>
+  <div className='car__cards'>
       {cars.map((car) => (
-
-    <div  className='car__card' >
-      <CardGroup class="mx-auto">
-        <Card bg='light' style={{ width: '40rem' }}>
+    <div className='car__card'>
+      <CardGroup >
+        <Card className='car__box' bg='light' style={{ width: '20rem' }}>
           <Card.Img variant="top" src={car.img_url} />
             <Card.Body>
               <Card.Title className=''>{car.year} {car.model}</Card.Title>
@@ -23,9 +22,9 @@ function WheelsPage({ cars, handleCarDelete }) {
               <Card.Footer className='btn_3' class="d-flex justify-content-around">
                 <div>
                   <Link to={`/cars/${car.id}/edit`}>
-                    <Button variant="primary" size="sm" >Edit</Button>
+                    <Button style={{ height: '3rem', width: '5rem' }}variant="primary" size="sm" >Edit</Button>
                   </Link>
-                  <Button variant="secondary" size="sm" onClick={()=>handleCarDelete(car.id)}>Delete</Button>
+                  <Button style={{ height: '3rem', width: '5rem' }} variant="secondary" size="sm" onClick={()=>handleCarDelete(car.id)}>Delete</Button>
                 </div>
               </Card.Footer>
           </Card>
