@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 function EditModal({ cars, handleCarUpdate }) {
   const [formData, setFormData] = useState({
@@ -14,7 +15,6 @@ function EditModal({ cars, handleCarUpdate }) {
   const { id } = useParams();
 
   useEffect(() => {
-    // debugger
     const prefillForm = () => {
       const { make, model, year, content, img_url } = cars.find((car) => car.id === Number(id));
       setFormData({ make, model, year, content, img_url });
@@ -31,17 +31,19 @@ function EditModal({ cars, handleCarUpdate }) {
   };
 
   return (
-    <div>
+    <div className='create__form'>
+      <div class="w-50 p-3 mb-2 p-2 bg-light text-dark border rounded">
     
-      <h3>Edit Post</h3>
+      <h3 class='mb-4 p-2'>Edit Post</h3>
       <form
         onSubmit={(e) => {
         e.preventDefault()
-        handleCarUpdate(id, formData)
+        handleCarUpdate(formData)
+            
       }}
-      >
-        <label for="year">Year:</label>
-        <select
+        >
+
+        <select class='mb-4 mt-4 p-2'
           placeholder="Year"
           value={year}
           name="year"
@@ -50,7 +52,7 @@ function EditModal({ cars, handleCarUpdate }) {
           required
           onChange={handleChange}>
           
-            <option>--Please Select--</option>
+            <option>--Select Year--</option>
             <option>1950</option>
             <option>1951</option>
             <option>1952</option>
@@ -124,9 +126,10 @@ function EditModal({ cars, handleCarUpdate }) {
             <option>2020</option>
             <option>2021</option>
           </select>
+          <br/>
+          
 
-        <label>Make:</label>
-        <select
+        <select class='mb-4 p-2'
           placeholder="Make"
           value={make}
           name="make"
@@ -135,9 +138,9 @@ function EditModal({ cars, handleCarUpdate }) {
           required
           onChange={handleChange}>
           
-          <option>--Please Select--</option>
-          <option > Acura </option>
-          <option >Aero</option>
+          <option>--Select Make--</option>
+          <option> Acura </option>
+          <option>Aero</option>
           <option>Alfa Romeo</option>
           <option>Aston Martin</option>
           <option>Audi</option>
@@ -197,32 +200,30 @@ function EditModal({ cars, handleCarUpdate }) {
           <option>Toyota</option>
           <option>Volkswagen</option>
           <option>Volvo</option>
-        </select>
+          </select>
+          <br/> 
           
-
-
-        <label>Model:</label>
-        <input
+        <input class='mb-4 p-2'
           placeholder="Model"
           value={model}
           name="model"
           type="text"
           required
           onChange={handleChange}
-        />
+          />
+          <br/>
 
-        <label>Add Photo Link Here:</label>
-        <input
+        <input class='mb-4 p-2'
           placeholder="Add Photo Link Here"
           value={img_url}
           name="img_url"
           type="text"
           required
           onChange={handleChange}
-        />
+          />
+          <br/>
         
-        <label>What Made You Love This Vehicle?</label>
-        <input
+        <textarea class='mb-4 p-2'
           placeholder="What Made You Love This Vehicle?"
           value={content}
           rows={8}
@@ -230,9 +231,14 @@ function EditModal({ cars, handleCarUpdate }) {
           type="text"
           required
           onChange={handleChange}
-        />
-        <button>Submit</button>
+          />
+          <br/>
+        
+        <div className='btn__4'>
+    <Button variant="primary" type="submit">Submit</Button></div>
+
       </form>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import CreateForm from '../components/CreateForm'
-import EditModal from '../components/EditModal'
+import EditPage from '../components/EditPage'
 import Splash from '../screens/Splash'
 import Wheels from '../screens/Wheels'
 import { deleteCar, getAllCars, postCar, putCar } from '../services/car'
@@ -41,7 +41,7 @@ function MainContainer() {
   return (
     <div>
       <Switch>
-        <Route path='/cars/:id/edit'><EditModal cars={cars} handleCarUpdate={handleCarUpdate}/></Route>
+        <Route path='/cars/:id/edit'><EditPage cars={cars} handleCarUpdate={handleCarUpdate}/></Route>
 
         <Route path='/cars/new'><CreateForm handleCarCreate={handleCarCreate}/></Route>
         

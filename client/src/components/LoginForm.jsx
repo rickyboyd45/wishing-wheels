@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { Form, Button, Container } from 'react-bootstrap'
+import '../assets/css/LoginForm.css'
 
 function LoginForm(props) {
   const [formData, setFormData] = useState({
@@ -21,7 +22,8 @@ function LoginForm(props) {
   };
 
   return (
-    <div>
+    <div className='login__'>
+    <div class="w-50 p-3 mb-2 bg-light text-dark border rounded">
       
       <Container >
 <Form onSubmit={(e) => {
@@ -30,9 +32,7 @@ function LoginForm(props) {
       }}>
         
         <Form.Group className="mb-2" controlId="formBasicUser">
-            <Form.Text className="text-muted">Need a Wishing Wheels account? <Link to='/signup'>Sign Up</Link>
-              <br/>
-    </Form.Text>
+            
     <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
@@ -42,7 +42,7 @@ function LoginForm(props) {
             placeholder="Username" />
   </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formBasicPassword">
+  <Form.Group className="mb-2" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -51,11 +51,14 @@ function LoginForm(props) {
             onChange={handleChange}
             placeholder="Password" />
         </Form.Group>
-
-  <Button variant="primary" type="submit">Submit</Button>
+<Form.Text className="text-muted">Need a Wishing Wheels account? <Link to='/signup'>Sign Up</Link>
+              <br/>
+            </Form.Text>
+            <div className='btn__3'>
+  <Button  variant="primary" type="submit">Submit</Button></div>
       </Form>
 </Container>
-
+</div>
     </div>
   )
 }

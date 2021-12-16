@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-// import { Form, Button, Container, Dropdown, DropdownButton } from 'react-bootstrap'
+import '../assets/css/CreateForm.css'
+import { Button } from 'react-bootstrap'
 
 function CreateForm({ handleCarCreate }) {
   const [formData, setFormData] = useState({
@@ -21,17 +22,19 @@ function CreateForm({ handleCarCreate }) {
   };
 
   return (
-    <div>
+    <div className='create__form'>
+      <div class="w-50 p-3 mb-2 p-2 bg-light text-dark border rounded">
     
-      <h3>Create New Post</h3>
+      <h3 class='mb-4 p-2'>Create New Post</h3>
       <form
         onSubmit={(e) => {
         e.preventDefault()
-        handleCarCreate(formData)
+            handleCarCreate(formData)
+            
       }}
-      >
-        <label for="year">Year:</label>
-        <select
+        >
+
+        <select class='mb-4 mt-4 p-2'
           placeholder="Year"
           value={year}
           name="year"
@@ -40,7 +43,7 @@ function CreateForm({ handleCarCreate }) {
           required
           onChange={handleChange}>
           
-            <option>--Please Select--</option>
+            <option>--Select Year--</option>
             <option>1950</option>
             <option>1951</option>
             <option>1952</option>
@@ -114,9 +117,10 @@ function CreateForm({ handleCarCreate }) {
             <option>2020</option>
             <option>2021</option>
           </select>
+          <br/>
+          
 
-        <label>Make:</label>
-        <select
+        <select class='mb-4 p-2'
           placeholder="Make"
           value={make}
           name="make"
@@ -125,9 +129,9 @@ function CreateForm({ handleCarCreate }) {
           required
           onChange={handleChange}>
           
-          <option>--Please Select--</option>
-          <option > Acura </option>
-          <option >Aero</option>
+          <option>--Select Make--</option>
+          <option> Acura </option>
+          <option>Aero</option>
           <option>Alfa Romeo</option>
           <option>Aston Martin</option>
           <option>Audi</option>
@@ -187,30 +191,30 @@ function CreateForm({ handleCarCreate }) {
           <option>Toyota</option>
           <option>Volkswagen</option>
           <option>Volvo</option>
-        </select>
+          </select>
+          <br/> 
           
-        <label>Model:</label>
-        <input
+        <input class='mb-4 p-2'
           placeholder="Model"
           value={model}
           name="model"
           type="text"
           required
           onChange={handleChange}
-        />
+          />
+          <br/>
 
-        <label>Add Photo Link Here:</label>
-        <input
+        <input class='mb-4 p-2'
           placeholder="Add Photo Link Here"
           value={img_url}
           name="img_url"
           type="text"
           required
           onChange={handleChange}
-        />
+          />
+          <br/>
         
-        <label>What Made You Love This Vehicle?</label>
-        <input
+        <textarea class='mb-4 p-2'
           placeholder="What Made You Love This Vehicle?"
           value={content}
           rows={8}
@@ -218,93 +222,14 @@ function CreateForm({ handleCarCreate }) {
           type="text"
           required
           onChange={handleChange}
-        />
+          />
+          <br/>
         
-        <button>Submit</button>
+        <div className='btn__4'>
+  <Button  variant="primary" type="submit">Submit</Button></div>
 
       </form>
-
-      {/* <Container >
-        <Form onSubmit={(e) => {
-        e.preventDefault()
-        handleCarCreate(formData)
-      }}>
-              
-              <Form.Group className="mb-7" controlId="formBasicYear">
-                <Form.Label>Year</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name='year'
-                    value={year}
-                    onChange={handleChange}
-                    placeholder="Year" />
-          </Form.Group>
-          
-              <Form.Group className="mb-8" controlId="formBasicModel">
-                <Form.Label>Model</Form.Label>
-                  <Form.Control
-                    placeholder="Model"
-                    value={model}
-                    name="model"
-                    type="text"
-                    required
-                    onChange={handleChange}
-                  />
-                  </Form.Group>
-                
-              <Form.Group className="mb-9" controlId="formBasicMake">
-                <Form.Label>Make</Form.Label>
-                <Form.Control>
-                  placeholder="Make"
-                  value={make}
-                  name="make"
-                  id="make"
-                  type="text"
-                  required
-                  onChange={handleChange}
-
-            </Form.Control>
-          </Form.Group>
-          
-              <Form.Group className="mb-10" controlId="formBasicModel">
-                <Form.Label>Model</Form.Label>
-                <Form.Control
-          placeholder="Model"
-          value={model}
-          name="model"
-          type="text"
-          required
-          onChange={handleChange}
-        />
-          </Form.Group>
-          
-              <Form.Group className="mb-11" controlId="formBasicImg">
-                <Form.Label>Add Photo Link Here:</Form.Label>
-                <Form.Control
-          placeholder="Add Photo Link Here"
-          value={img_url}
-          name="img_url"
-          type="text"
-          required
-          onChange={handleChange}
-        />
-              </Form.Group>
-
-              <Form.Group className="mb-12" controlId="formBasicContent">
-                <Form.Label>What Made You Love This Vehicle?</Form.Label>
-                  <Form.Control
-                            placeholder="What Made You Love This Vehicle?"
-                            value={content}
-                            rows={8}
-                            name="content"
-                            type="text"
-                            required
-                            onChange={handleChange}
-                          />
-              </Form.Group>
-          <Button variant="primary" type="submit">Submit</Button>
-        </Form>
-        </Container> */}
+      </div>
     </div>
   );
 }

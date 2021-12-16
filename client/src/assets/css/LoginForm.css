@@ -1,0 +1,14 @@
+.login__ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+  padding: 100px 0;
+  opacity: .96;
+}
+
+.btn__3 {
+display: flex;
+justify-content: center;
+align-items: center;
+}

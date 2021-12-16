@@ -1,0 +1,15 @@
+.create__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  opacity: .96;
+  text-align: center;
+}
+
+.btn__4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 0 0;
+}

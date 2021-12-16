@@ -1,0 +1,15 @@
+.signup__ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px -5px;
+  padding: 100px 0;
+  opacity: .96;
+}
+
+.btn__4 {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
