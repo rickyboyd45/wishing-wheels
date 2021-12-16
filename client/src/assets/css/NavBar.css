@@ -69,7 +69,7 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .nav__ul {
-    margin: 0px -355px;
+    margin: 0px 0px;
     padding: 0px 130px;
   }
 
@@ -94,7 +94,7 @@
 
 @media only screen and (min-device-width: 1025px) {
   .nav__ul {
-    margin: 0px -355px;
+    margin: 0px 0px;
     padding: 0px 130px;
   }
 
