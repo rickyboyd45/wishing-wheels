@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/css/NavBar.css'
-import { Navbar, Nav, Container  } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function Navigate(props) {
   const { currentUser, handleLogout } = props;
@@ -40,8 +40,6 @@ function Navigate(props) {
               
               <Nav.Link href="about">About</Nav.Link>
 
-              
-
               {currentUser ? (
                 <Nav.Link onClick={handleLogout} href="/">Log Out</Nav.Link>
               ) : (
@@ -52,7 +50,6 @@ function Navigate(props) {
     </Navbar.Collapse>
   </Container>
 </Navbar>
-
 
     </>
   )

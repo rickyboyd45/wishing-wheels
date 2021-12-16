@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import Button from 'react-bootstrap/Button';
 import '../assets/css/Wheels.css'
 
-function WheelsPage({ cars, handleCarDelete, currentUser }) {
+function WheelsPage({ cars, handleCarDelete }) {
   
   return (
   <div className='car__cards'>
@@ -22,12 +22,15 @@ function WheelsPage({ cars, handleCarDelete, currentUser }) {
               <Card.Footer className='btn_3' class="d-flex justify-content-around">
                 <div>
 
-                  {currentUser &&
+                  
+
                   <Link to={`/cars/${car.id}/edit`}>
-                    <Button style={{ height: '3rem', width: '5rem' }}variant="primary" size="sm" >Edit</Button>
-                    </Link>}
-                  {currentUser &&
-                    <Button style={{ height: '3rem', width: '5rem' }} variant="secondary" size="sm" onClick={() => handleCarDelete(car.id)}>Delete</Button>}
+                    <Button style={{ height: '3rem', width: '5rem' }} variant="primary" size="sm" >Edit</Button>
+                  </Link>
+                  
+                  
+                    <Button style={{ height: '3rem', width: '5rem' }} variant="secondary" size="sm" onClick={() => handleCarDelete(car.id)}>Delete</Button> 
+                  
                 </div>
               </Card.Footer>
           </Card>
