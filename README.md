@@ -131,7 +131,13 @@ src
 
 ### Code Showcase
 ```
-
+            {currentUser ? (
+                <div>
+                <p>Welcome, {currentUser.username}</p>
+                </div>
+            ) : (
+              <Nav.Link href="login">Login</Nav.Link>
+            )}
 ```
 
 ### Code Issues & Resolutions
