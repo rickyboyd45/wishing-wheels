@@ -7,7 +7,7 @@ function SplashContainer() {
     <>
       <div className="head__info1__box">
             <p>
-          Fast, slow, big, small we love them ALL!! Come and join like-minded car lovers and give us insight on a vehicle that's on your dream list or a vehicle you just love!
+          Fast, slow, big, small we love them ALL!! Come and join like-minded car lovers and give us insight on a vehicle that's on your dream list or a vehicle you just love! You will need to sign up to create a post.
         </p>
         
         <Link to='/cars'>
