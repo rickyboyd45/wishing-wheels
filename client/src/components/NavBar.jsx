@@ -22,6 +22,15 @@ function Navigate(props) {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+
+            {currentUser ? (
+                <div>
+                <p>Welcome, {currentUser.username}</p>
+                </div>
+            ) : (
+              <Nav.Link href="login">Login</Nav.Link>
+            )}
+
               <Nav.Link href="/">Home</Nav.Link>
               
               <Nav.Link href="cars">Wheels</Nav.Link>
@@ -31,13 +40,6 @@ function Navigate(props) {
               
               <Nav.Link href="about">About</Nav.Link>
 
-            {currentUser ? (
-                <div>
-                <p>Welcome, {currentUser.username}</p>
-                </div>
-            ) : (
-              <Nav.Link href="login">Login</Nav.Link>
-            )}
               
 
               {currentUser ? (
