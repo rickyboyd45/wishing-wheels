@@ -1,70 +1,63 @@
 import React from 'react'
 import '../assets/css/NavBar.css'
-import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button';
+import { Navbar, Nav, Container  } from 'react-bootstrap';
 
-function NavBar(props) {
+function Navigate(props) {
   const { currentUser, handleLogout } = props;
 
   return (
     <>
-      <nav className='navcontainer'>
-        <div className=''>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <div className='nav__logo'>
-              <img className='nav__logo__img' src="https://i.imgur.com/1PZUK6e.png" alt="Logo" width="80" height="80" />
-              <h4 className='nav__left'>Wishing Wheels</h4>
-            </div>
-          </Link> 
-        </div>
-      
 
-      <div className='nav__right'>
-        <ul className='nav__ul'></ul>          
-        <li>
-            {
-              currentUser ? (
+      <Navbar bg="light" expand="md">
+  <Container>
+  <Navbar.Brand href="/">
+      <img
+        src="https://i.imgur.com/1PZUK6e.png"
+        width="50"
+        height="50"
+        className="d-inline-block align-top"
+        alt="wishing wheels logo"
+      />
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              
+              <Nav.Link href="cars">Wheels</Nav.Link>
+
+              {currentUser &&
+                <Nav.Link href="cars/new">Create Post</Nav.Link>}   
+              
+              <Nav.Link href="about">About</Nav.Link>
+
+            {currentUser ? (
                 <div>
                 <p>Welcome, {currentUser.username}</p>
                 </div>
             ) : (
-              <Link to="/login" ><p>Login</p></Link>
+              <Nav.Link href="login">Login</Nav.Link>
             )}
-        </li>
-          <li>
-            {currentUser &&
-        <Link to="/cars/new" ><p>Create Post</p></Link>}
-        </li>
+              
 
-        <li>
-        <Link to="/about" ><p>About</p></Link>
-          </li>
-          
-        <li>
-        <Link to="/cars" ><p>Wheels</p></Link>
-        </li>
-
-          <li>
-            {
-              currentUser ? (
-                <div>
-                  <Button className='logout__btn' variant="warning" onClick={handleLogout}>Log Out</Button>
-                </div>
+              {currentUser ? (
+                <Nav.Link onClick={handleLogout} href="/">Log Out</Nav.Link>
               ) : (
-                  <Link to="/signup" >
-                  <Button className='signup__btn' variant="warning">Sign Up</Button>
-                  </Link>
+                <Nav.Link href="signup">Sign Up</Nav.Link>
               )}
-          </li>
-          
-          
+              
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
 
-        </div>
-      </nav>
+
     </>
   )
 }
 
-export default NavBar
+export default Navigate
+
+
 
 

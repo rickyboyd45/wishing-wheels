@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
+import Navigate from '../components/NavBar';
 
 
 function Layout(props) {
@@ -9,7 +9,7 @@ function Layout(props) {
     
     <>
     <header>
-        <NavBar currentUser={currentUser} handleLogout={handleLogout}/>
+        <Navigate currentUser={currentUser} handleLogout={handleLogout}/>
     </header>
     {props.children}
     </>
