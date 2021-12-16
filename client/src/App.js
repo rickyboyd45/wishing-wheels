@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import SignUp from './components/SignUpForm';
 import MainContainer from './Containers/MainContainer';
+import AboutPage from './components/AboutPage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -53,7 +54,9 @@ function App() {
             <SignUp handleRegister={handleRegister} />
           </Route>
 
-          <Route path='/about'></Route>
+          <Route path='/about'>
+            <AboutPage/>
+          </Route>
         
           <Route path='/'>
             <MainContainer />

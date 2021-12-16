@@ -6,7 +6,6 @@ function Layout(props) {
   const { currentUser, handleLogout } = props;
 
   return (
-    
     <>
     <header>
         <Navigate currentUser={currentUser} handleLogout={handleLogout}/>
