@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import '../assets/css/EditPage.css'
 
 function EditModal({ cars, handleCarUpdate }) {
   const [formData, setFormData] = useState({
@@ -31,8 +32,8 @@ function EditModal({ cars, handleCarUpdate }) {
   };
 
   return (
-    <div className='create__form'>
-      <div class="w-50 p-3 mb-2 p-2 bg-light text-dark border rounded">
+    <div className='edit__form'>
+      <div class="w-70 p-3 mb-2 p-2 bg-light text-dark border rounded">
     
       <h3 class='mb-4 p-2'>Edit Post</h3>
       <form

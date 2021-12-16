@@ -23,7 +23,7 @@ function CreateForm({ handleCarCreate }) {
 
   return (
     <div className='create__form'>
-      <div class="w-50 p-3 mb-2 p-2 bg-light text-dark border rounded">
+      <div className='create__form2' class="w-70 p-3 mb-2 p-2 bg-light text-dark border rounded">
     
       <h3 class='mb-4 p-2'>Create New Post</h3>
       <form
@@ -217,7 +217,7 @@ function CreateForm({ handleCarCreate }) {
         <textarea class='mb-4 p-2'
           placeholder="What Made You Love This Vehicle?"
           value={content}
-          rows={8}
+          rows={6}
           name="content"
           type="text"
           required

@@ -1,0 +1,8 @@
+.edit__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 55px 0;
+  opacity: .96;
+  text-align: center;
+}
