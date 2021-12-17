@@ -7,6 +7,7 @@ import { loginUser, registerUser, removeToken, verifyUser } from './services/aut
 import SignUp from './components/SignUpForm';
 import MainContainer from './Containers/MainContainer';
 import AboutPage from './components/AboutPage';
+import EditModal from './components/EditPage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -61,6 +62,8 @@ function App() {
           <Route path='/'>
             <MainContainer />
           </Route>
+
+          <EditModal currentUser={currentUser}/>
 
         </Switch>
       </Layout>

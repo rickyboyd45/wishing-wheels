@@ -31,12 +31,13 @@ function Navigate(props) {
               <Nav.Link href="login">Login</Nav.Link>
             )}
 
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="home">Home</Nav.Link>
               
-              <Nav.Link href="cars">Wheels</Nav.Link>
+              <Nav.Link href="cars" currentUser={currentUser}>Wheels</Nav.Link>
 
               {currentUser &&
                 <Nav.Link href="cars/new">Create Post</Nav.Link>}   
+              
               
               <Nav.Link href="about">About</Nav.Link>
 
@@ -49,7 +50,7 @@ function Navigate(props) {
       </Nav>
     </Navbar.Collapse>
   </Container>
-</Navbar>
+      </Navbar>
 
     </>
   )

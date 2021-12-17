@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap'
 import '../assets/css/EditPage.css'
 
 function EditModal({ cars, handleCarUpdate }) {
+
   const [formData, setFormData] = useState({
     make: '',
     model: '',
@@ -40,7 +41,6 @@ function EditModal({ cars, handleCarUpdate }) {
         onSubmit={(e) => {
         e.preventDefault()
         handleCarUpdate(formData)
-            
       }}
         >
 

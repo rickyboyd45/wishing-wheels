@@ -2,7 +2,6 @@ import React from 'react'
 import Navigate from '../components/NavBar';
 import '../assets/css/Layout.css'
 
-
 function Layout(props) {
   const { currentUser, handleLogout } = props;
 
@@ -11,7 +10,7 @@ function Layout(props) {
     <header className='header'>
         <Navigate currentUser={currentUser} handleLogout={handleLogout}/>
       </header>
-      
+
       {props.children}
 
       <footer className='footer'>

@@ -2,12 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import CreateForm from '../components/CreateForm'
-import EditPage from '../components/EditPage'
+import EditModal from '../components/EditPage'
 import Splash from '../screens/Splash'
 import Wheels from '../screens/Wheels'
 import { deleteCar, getAllCars, postCar, putCar } from '../services/car'
 
-function MainContainer() {
+function MainContainer({currentUser}) {
   const [cars, setCars] = useState([]);
   const history = useHistory();
 
@@ -41,11 +41,11 @@ function MainContainer() {
   return (
     <div>
       <Switch>
-        <Route path='/cars/:id/edit'><EditPage cars={cars} handleCarUpdate={handleCarUpdate}/></Route>
+        <Route path='/cars/:id/edit'><EditModal cars={cars} handleCarUpdate={handleCarUpdate} currentUser={currentUser}/></Route>
 
         <Route path='/cars/new'><CreateForm handleCarCreate={handleCarCreate}/></Route>
         
-        <Route path='/cars'><Wheels cars={cars} handleCarDelete={handleCarDelete} /></Route>
+        <Route path='/cars'><Wheels cars={cars} handleCarUpdate={handleCarUpdate} handleCarDelete={handleCarDelete} currentUser={currentUser}/></Route>
 
         <Route path='/'>
           <Splash/>
